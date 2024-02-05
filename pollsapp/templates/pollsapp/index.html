@@ -1,0 +1,27 @@
+{% extends 'pollsapp/base.html' %}
+
+{% block title %} Survey list {% endblock %}
+
+{% block body %}
+
+<h1><strong> Very important surveys</strong></h1>
+
+<!--<div>-->
+<!--    {% for question in questions %}-->
+<!--    <a href=" {% url 'vote' question.id %} " class="list-group-item list-group-item-action">-->
+<!--        <h5>{{question.question}}</h5></a>-->
+<!--   {% endfor %}-->
+
+<!--</div>-->
+
+
+<div>
+    {% for survey in surveys %}
+    <a href=" {% url 'pollsapp:vote' survey.pk %} ">
+        <h5>{{survey.title}}</h5></a>
+   {% endfor %}
+
+</div>
+
+
+{% endblock %}

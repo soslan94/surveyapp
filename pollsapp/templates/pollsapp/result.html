@@ -1,0 +1,21 @@
+{% extends 'pollsapp/base.html' %}
+{% block title%}
+    Results
+{% endblock %}
+
+{% block body %}
+
+<h4>{{question.question}}</h4>
+
+<ul>
+{% for option in options %}
+<li>
+    {{option.option}}
+    <span class="badge bg-primary rounded-pill">{{option.vote}}%</span>
+  </li>
+  {% endfor %}
+
+
+</ul>
+
+{% endblock %}
